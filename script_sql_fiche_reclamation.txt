@@ -1,0 +1,26 @@
+CREATE TABLE `reclamations` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `employeeIdFK` int(11) NOT NULL,
+ `matricule` varchar(50) NOT NULL,
+ `telephone` varchar(20) NOT NULL,
+ `section` varchar(100)  NOT NULL,
+ `cree_par` varchar(100)  NOT NULL,
+ `date_creation` datetime DEFAULT NULL,
+ `debut_periode` date DEFAULT NULL,
+ `fin_periode` date DEFAULT NULL,
+ `salaire` varchar(50) NOT NULL,
+ `commentaire_reclamation` text,
+ `traite_par` varchar(100) DEFAULT NULL,
+ `date_traitement` datetime DEFAULT NULL,
+ `adjustmentIdFK` int(11) DEFAULT NULL,
+ `ResultatIdFk` int(11) DEFAULT NULL,
+ `commentaire_resultat` text,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Table reclamation_resultat
+CREATE TABLE `reclamation_resultat` (
+ `ResultatId` int(11) NOT NULL AUTO_INCREMENT,
+ `designation_resultat` varchar(25) DEFAULT NULL,
+ PRIMARY KEY (`ResultatId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
